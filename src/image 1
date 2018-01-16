@@ -1,0 +1,84 @@
+
+Store meal {
+    Break Fast: chai papa
+    Lunch : dal chawal                             
+    Dinner: spicy tende                               
+
+}
+
+Provider{
+
+}
+
+Container{
+    HR
+    Operations
+    QA
+}
+
+component{
+    Team A
+    Team B                              
+    Team C
+}
+
+
+
+
+
+import providers and connect with Store
+    make Priver Parent of Router
+    use store as attribute of provider and pass store to it
+
+
+
+create store folder and make index.js for creating store
+    import reducer from your reducer file
+    import createStore and applyMiddleWare from library redux
+    import thunk from redux-thunk
+    use createStore method and pass reducer, {} and applyMiddleWare(thunk) in param
+
+
+
+
+create reducer folder inside store folder
+    create index.js and reducer.js inside reducer folder
+        import all reducers
+        import combine reducer from library redux
+        use combineReducer method and pass all reducers in Object form   
+    
+    initialize all states
+    create reducer function and pass states and action as param
+    use switch and check action.type in all cases
+        if case matches then return ...state and if any changes there in form of object
+
+
+
+To Connect with States and Actions in Component or Container
+
+    import connect from react-redux
+    call connect at the end with two functions in params and call again with componentName in param
+
+   unction mapStateToProp(state){
+        return({
+            userName: state.root.userName
+        })
+    }
+
+
+
+
+    import name of actionFunction 
+    function mapDispatchToProp(dispatch){
+        return({
+            changeUserName: ()=>{dispatch(changeUserName())}
+        })
+    }
+
+
+Action file
+    export function to dispatch action Object
+
+
+Const file
+    Object with action types

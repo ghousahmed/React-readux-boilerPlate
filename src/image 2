@@ -1,0 +1,19 @@
+
+
+function reducer(meal, action){
+    switch(action.type){
+        case breakfast:
+            return()
+        case lunch:
+            return(
+                ...meal,
+                Lunch:action.payload
+            )
+        case dinner:
+            return()
+        default:
+            return()
+    }
+}
+
+action dispatch({type:'lunch', payload:'Biryani'})
