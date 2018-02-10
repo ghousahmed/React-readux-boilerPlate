@@ -5,13 +5,12 @@ import Main from './components/main';
 import Signup from './components/signup';
 import Login from './components/login';
 import User from './components/user';
-import createBrowserHistory from 'history/createBrowserHistory'
+import history from '../src/history'
 import firebase from 'firebase'
 import Notfound from './components/notFound';
 
 
 
-const history = createBrowserHistory()
 
 function PrivateRoute ({component: Component, authed, ...rest}) {
     return (
@@ -72,8 +71,7 @@ class Routers extends Component {
 
     render() {
         return (
-            <Router history={history}>
-                <div>
+            <Router  history={history}>
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <PrivateRoute authed={this.state.authed} path="/main" component={Main} />
@@ -83,7 +81,6 @@ class Routers extends Component {
                         <Route path="*" component={Notfound}/>
 
                     </Switch>
-                </div>
             </Router>
         )
     }

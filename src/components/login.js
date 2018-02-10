@@ -25,6 +25,9 @@ class Login extends Component {
         }
         this.props.SigninUser(data);
         }
+        signup(){
+            this.props.history.push('/signup')
+        }
     render() {
         return (
             <div>
@@ -39,6 +42,7 @@ class Login extends Component {
                 <br />
                 <button type="submit">Signin</button>
                 </form>
+                {/* <button onClick={this.signup.bind(this)}>Go</button> */}
             </div>
              
 

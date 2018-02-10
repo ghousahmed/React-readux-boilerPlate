@@ -1,8 +1,7 @@
 import ActionTypes from '../constant/constant';
 import firebase from 'firebase'
-import createBrowserHistory from 'history/createBrowserHistory'
+import history from '../../history'
 
-const history = createBrowserHistory()
 // Initialize Firebase
 
 
@@ -16,7 +15,7 @@ export function SignupUser(user){
     firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
     .then(function(result){
         console.log(result)
-        history.push('./login')
+        history.push('/login')
 
     })
     .catch(function(error) {
@@ -38,7 +37,8 @@ export function SigninUser(user){
         // Handle Errors here.
         // ...
       });
-      
+    // history.push('/signup')
+
     return dispatch => dispatch({type: ActionTypes.SigninUser, payload: user})
     
 }
